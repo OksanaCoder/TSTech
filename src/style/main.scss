@@ -1,8 +1,10 @@
-body {
-	background: pink;
-}
-.main {
-	background: url('./images/main.png');
+
+.header {
+	background: url('images/main.png');
 	width: 100%;
 	height: 400px;
+	margin: 0 auto;
+}
+.wrapper {
+    max-width: 1002px;
 }
