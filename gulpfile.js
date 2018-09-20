@@ -5,7 +5,7 @@ const gulp = require('gulp'),
 	htmlmin = require('gulp-htmlmin'),
 	cssmin = require('gulp-clean-css'),
 	uglify = require('gulp-uglify'),
-	imagemin = require('gulp-imagemin'),
+    image = require('gulp-image'),
 	browserSync = require("browser-sync"),
 	reload = browserSync.reload;
 
@@ -56,29 +56,24 @@ gulp.task('minify', () => {
     .pipe(htmlmin({ collapseWhitespace: true }))
     .pipe(gulp.dest('build'));
 });
-gulp.task('images', function () {
-	gulp.src(path.src.img)
-		.pipe(imagemin([
-		    imagemin.jpegtran({
-				progressive: true
-			}),
-		    imagemin.optipng({
-				optimizationLevel: 5
-			}),
-		    imagemin.svgo({
-				plugins: [
-					{
 
-						removeViewBox: true
-                    },
-					{
-						cleanupIDs: false
-                    }
-       			]
-			})
-		]))
-		.pipe(gulp.dest(path.build.img));
+gulp.task('image', function () {
+  gulp.src(path.src.img)
+    .pipe(image({
+      pngquant: true,
+      optipng: false,
+      zopflipng: true,
+      jpegRecompress: false,
+      mozjpeg: true,
+      guetzli: false,
+      gifsicle: true,
+      svgo: true,
+      concurrent: 10,
+      quiet: true // defaults to false
+    }))
+    .pipe(gulp.dest(path.build.img));
 });
+
  gulp.task('browser-sync', function () { 
 	browserSync({ 
 		server: { 
@@ -90,13 +85,13 @@ gulp.task('images', function () {
 
 
 
-gulp.task('build', ['scripts', 'styles', 'minify', 'images', 'browser-sync']);
+gulp.task('build', ['scripts', 'styles', 'minify', 'image', 'browser-sync']);
 
 gulp.task('watch', function () {
 	gulp.watch(path.watch.style, ['styles']);
 	gulp.watch(path.watch.css, ['styles']);
 	gulp.watch(path.watch.js, ['scripts']);
-	gulp.watch(path.watch.img, ['images']);
+	gulp.watch(path.watch.img, ['image']);
 	gulp.watch(path.watch.html, browserSync.reload);
 	gulp.watch(path.watch.style, browserSync.reload);
 	gulp.watch(path.watch.js, browserSync.reload);
