@@ -7,6 +7,7 @@
 	padding: 0;
 	margin: 0;
 	box-sizing: border-box;
+	text-decoration: none;
 }
 .header {
 	background: url('/images/main.png');
@@ -132,6 +133,7 @@ h1 {
    }
    	.policy {
    		display: flex;
+   		flex-wrap: wrap;
    		width: 90%;
    		font-size: 14px;
    		margin-top: 20px;
@@ -140,7 +142,7 @@ h1 {
    	}
    	.guy-img {
    		position: absolute;
-   	    bottom: -26px;
+   	    bottom: -34px;
         right: 30%;
         z-index: 1;
    	}
@@ -161,9 +163,11 @@ h1 {
 
 		}
 		.try {
-			height: 101px;
+			padding: 30px;
 			background: #fafafa;
 			border-top: 1px solid #ececec;
+		    text-align: center;
+
 			
 		}
 		.scroll-up {
@@ -175,5 +179,5 @@ h1 {
 	        font-size: 22px;
 	        padding: 20px 62px;
 	        color: #fff;
-   
+  
 		}
