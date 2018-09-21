@@ -1,0 +1,16 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:100,300,400');
+
+@mixin roblight {
+	font-family: 'Roboto', sans-serif;
+	font-weight: 300;
+}
+
+@mixin robreg {
+	font-family: 'Roboto', sans-serif;
+	font-weight: 400;
+}
+
+@mixin robthin {
+	font-family: 'Roboto', sans-serif;
+	font-weight: 100;
+}
