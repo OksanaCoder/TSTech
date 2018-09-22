@@ -1,5 +1,5 @@
 @import 'fontface';
-
+@import 'media';
 
 
 
@@ -40,7 +40,7 @@ h1 {
 	@include roblight;
 	font-size: 40px;
 	text-transform: uppercase;
-	width: 437px;
+	// width: 437px;
 	text-align: center;
 	margin: 25px auto;
 }
@@ -49,8 +49,8 @@ h1 {
 	font-size: 18px;
 	background-color: #122532;
 	max-width: 358px;
-	height: 368px;
-	padding: 27px;
+	// height: 368px;
+	padding: 27px 27px 166px;
 }
 #form {
 	@include robthin;
@@ -133,7 +133,6 @@ h1 {
    }
    	.policy {
    		display: flex;
-   		flex-wrap: wrap;
    		width: 90%;
    		font-size: 14px;
    		margin-top: 20px;

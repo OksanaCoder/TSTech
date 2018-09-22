@@ -1,0 +1,41 @@
+
+@media (min-width: 320px) and (max-width: 767px) {
+  .content {
+  	flex-direction: column;
+  }
+  .left {
+  	margin: 0 auto;
+  }
+  .wrapper {
+  	width: 90%;
+  }
+  #form {
+  	margin-top: 60px;
+  }
+  .main {
+  	margin-top: 597px;
+  }
+  .guy-img{
+	left: 11%;
+    width: 425px;
+    bottom: 200px;
+    top: 306px;
+  }
+ }
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) { 
+	.wrapper {
+		width: 90%;
+	}
+	.guy-img{
+	left: 9%;
+    width: 425px;
+    bottom: 200px;
+    top: 347px;
+  }
+}
+@media (min-width: 768px) and (max-width: 1920px) and (orientation: landscape) { 
+	.wrapper {
+		width: 90%;
+	}
+
+}
